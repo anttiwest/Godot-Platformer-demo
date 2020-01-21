@@ -1,0 +1,166 @@
+[gd_resource type="TileSet" load_steps=6 format=2]
+
+[ext_resource path="res://sprites/dungeon_bg.png" type="Texture" id=1]
+[ext_resource path="res://sprites/ground1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/ground2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 676.428, 210.809 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[resource]
+0/name = "Sprite"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 0.313726, 0.156863, 0.054902, 1 )
+0/region = Rect2( 0, 0, 576, 336 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 288, 168 )
+0/navigation_offset = Vector2( 288, 168 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Ground1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 1350, 860 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 675, 430 )
+1/navigation_offset = Vector2( 675, 430 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+1/z_index = 0
+2/name = "Ground2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 1350, 860 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 675, 430 )
+2/navigation_offset = Vector2( 675, 430 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+2/z_index = 0
+3/name = "Ground3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 1350, 860 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 675, 430 )
+3/navigation_offset = Vector2( 675, 430 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+3/z_index = 0
+4/name = "Ground4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 1350, 860 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 675, 430 )
+4/navigation_offset = Vector2( 675, 430 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+4/z_index = 0
+5/name = "Ground5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 1350, 860 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 675, 430 )
+5/navigation_offset = Vector2( 675, 430 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+5/z_index = 0
+6/name = "Ground6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 1350, 860 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 675, 430 )
+6/navigation_offset = Vector2( 675, 430 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+6/z_index = 0
+7/name = "Ground7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 1350, 860 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 675, 430 )
+7/navigation_offset = Vector2( 675, 430 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+7/z_index = 0
+8/name = "Ground8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 1350, 860 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 675, 430 )
+8/navigation_offset = Vector2( 675, 430 )
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 675.471, 654.765 )
+} ]
+8/z_index = 0
+9/name = "FloatingGround1"
+9/texture = ExtResource( 3 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 1350, 860 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 675, 430 )
+9/navigation_offset = Vector2( 675, 430 )
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 67, 0, 0, 25.88, 675, 609.64 )
+} ]
+9/z_index = 0
