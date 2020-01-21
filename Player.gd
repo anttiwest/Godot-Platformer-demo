@@ -14,6 +14,7 @@ const FIREBALL = preload("res://Fireball.tscn")
 var velocity = Vector2()
 var on_ground = false
 var is_attacking = false
+var is_dead = false
 
 func shootFireball():
 	# Creates a single fireball instance
@@ -99,3 +100,6 @@ func _on_PlayerAnim_animation_finished():
 # On screen exited event
 func _on_VisibilityNotifier2D_screen_exited():
 	position = START_POS
+	
+#	pass
+

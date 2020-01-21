@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/anim/Skeleton32x32_idle.png" type="Texture" id=2]
-[ext_resource path="res://sprites/anim/Skeleton32x32_run_1.png" type="Texture" id=3]
-[ext_resource path="res://sprites/anim/Skeleton32x32_run_2.png" type="Texture" id=4]
-[ext_resource path="res://sprites/anim/Skeleton32x32_run_3.png" type="Texture" id=5]
-[ext_resource path="res://sprites/anim/Skeleton32x32_run_4.png" type="Texture" id=6]
-[ext_resource path="res://sprites/anim/Skeleton32x32_shoot.png" type="Texture" id=7]
+[ext_resource path="res://sprites/anim/Skeleton32x32_shoot.png" type="Texture" id=3]
+[ext_resource path="res://sprites/anim/Skeleton32x32_run_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/anim/Skeleton32x32_run_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/anim/Skeleton32x32_run_3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/anim/Skeleton32x32_run_4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/anim/Skeleton32x32_jump.png" type="Texture" id=8]
 [ext_resource path="res://sprites/anim/Skeleton32x32_fall.png" type="Texture" id=9]
 
@@ -17,15 +17,15 @@ animations = [ {
 "name": "idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "run",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "shoot",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": false,
@@ -60,5 +60,13 @@ shape = SubResource( 2 )
 position = Vector2( 25, 0 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -100
+limit_bottom = 250
+smoothing_enabled = true
+smoothing_speed = 10.0
+editor_draw_limits = true
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_PlayerAnim_animation_finished"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
