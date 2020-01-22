@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Stage1.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pokemon_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://sprites/anim/Skeleton32x32_enemy_dead.png" type="Texture" id=4]
-[ext_resource path="res://sprites/bluesky_pokemon.png" type="Texture" id=5]
-[ext_resource path="res://sprites/dungeon_bg.png" type="Texture" id=6]
-[ext_resource path="res://sprites/BrickWall30px_detail.png" type="Texture" id=7]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sprites/blue_sky_bg.png" type="Texture" id=5]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
 
 [node name="Stage1" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,668 +29,119 @@ texture = ExtResource( 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
+scroll_base_scale = Vector2( 0.5, 0.5 )
 
-[node name="sky" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 500, 90 )
-scale = Vector2( 4.23, 3 )
-z_index = 1
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 250 )
+
+[node name="sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="dungeonBG" type="Sprite" parent="ParallaxBackground"]
-visible = false
-modulate = Color( 0.313726, 0.156863, 0.054902, 1 )
-self_modulate = Color( 0.678431, 0.643137, 0.643137, 1 )
-position = Vector2( 166.098, 66.2966 )
-scale = Vector2( 0.584323, 0.584323 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall" type="Node" parent="ParallaxBackground"]
-editor/display_folded = true
-
-[node name="BrickWall30px_detail" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail26" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 120, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail63" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 240, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail10" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 0, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail44" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 120, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail54" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 240, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail20" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 0, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail73" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 30, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail39" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 120, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail56" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 240, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail6" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 60, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail29" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 180, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail70" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 300, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail13" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 60, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail41" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 180, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail60" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 300, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail17" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 60, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail40" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 180, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail55" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 300, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail4" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 30, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail27" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 150, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail64" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 270, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail11" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 30, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail45" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 150, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail53" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 270, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail21" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 30, 110 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail37" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 150, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail59" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 270, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail7" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 90, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail31" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 210, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail65" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 330, 0 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail15" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 90, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail47" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 210, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail58" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 330, 60 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail23" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 90, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail35" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 210, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail68" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 330, 120 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail2" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 15, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail25" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 135, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail61" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 255, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail9" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 15, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail42" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 135, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail52" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 255, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail18" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 15, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail34" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 135, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail67" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 255, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail5" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 75, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail30" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 195, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail62" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 315, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail14" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 75, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail43" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 195, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail49" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 315, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail19" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 75, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail36" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 195, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail69" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 315, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail3" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 45, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail28" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 165, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail72" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 285, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail12" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 45, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail46" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 165, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail57" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 285, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail22" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 45, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail33" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 165, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail71" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 285, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail8" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 105, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail32" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 225, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail66" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 345, 30 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail16" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 105, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail48" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 225, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail51" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 345, 90 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail24" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 105, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail38" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 225, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BrickWall30px_detail50" type="Sprite" parent="ParallaxBackground/BrickWall"]
-visible = false
-position = Vector2( 345, 150 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
+centered = false
+offset = Vector2( -125, 0 )
+
+[node name="sky10" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 625, 0 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -125, 0 )
+
+[node name="sky2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="sky6" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 625, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="sky3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 125, 0 )
+
+[node name="sky7" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 625, 0 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 125, 0 )
+
+[node name="sky4" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 250, 0 )
+
+[node name="sky8" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 625, 0 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 250, 0 )
+
+[node name="sky5" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 375, 0 )
+
+[node name="sky9" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 625, 0 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 375, 0 )
 
 [node name="Enemies" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 190, 120 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 60, 40 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 191.896, 60 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 150, 170 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 430, 168.504 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy13" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 510, 216.4 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy14" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 693.6, 215.652 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 510, 154 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy11" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 490, 52.852 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 380, 39.252 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 850, 153.252 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy10" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 840, 200 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 700, 120 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Enemy9" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 750, 120 )
 scale = Vector2( 0.4, 0.4 )

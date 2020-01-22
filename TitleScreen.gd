@@ -1,14 +1,14 @@
 extends Node
 
-var playButton
-var quitButton
-
 func _ready():
-	$MarginContainer/VBoxContainer/HBoxContainer/PlayButton.grab_focus()
+	$MarginContainer/VBoxContainer/VBoxContainer/PlayButton.grab_focus()
 	
 
 func _physics_process(delta):
-	pass
+	if $MarginContainer/VBoxContainer/VBoxContainer/PlayButton.is_hovered():
+		$MarginContainer/VBoxContainer/VBoxContainer/PlayButton.grab_focus()
+	if $MarginContainer/VBoxContainer/VBoxContainer/QuitButton.is_hovered():
+		$MarginContainer/VBoxContainer/VBoxContainer/QuitButton.grab_focus()
 
 func _on_PlayButton_pressed():
 	# Change scenes
